@@ -1,23 +1,25 @@
 {
-  "name": "conda-repo-template.templates.utkusarioglu.com",
+  "name": "sql-algo-workshop.workshops.utkusarioglu.com",
   "dockerComposeFile": [
     "../.docker/docker-compose.dev.yml",
     "docker-compose.yml"
   ],
-  "service": "conda-repo-template",
-  "workspaceFolder": "/utkusarioglu-com/templates/conda-repo-template",
+  "service": "sql-algo-workshop",
+  "workspaceFolder": "/utkusarioglu-com/workshops/sql-algo-workshop",
   "customizations": {
     "vscode": {
       "settings": {
         "workbench.colorCustomizations": {
-          "activityBar.background": "#FF0000",
+          "activityBar.background": "#009744",
           "activityBar.foreground": "#000000"
         }
       },
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "ms-python.black-formatter"
+        "ms-python.black-formatter",
+        "ms-python.vscode-pylance",
+        "tamasfe.even-better-toml"
       ]
     }
   },
