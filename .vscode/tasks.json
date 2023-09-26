@@ -7,7 +7,8 @@
       "type": "shell",
       "command": "scripts/test-monitor.sh",
       "args": [
-        "${file}"
+        "${file}",
+        "${workspaceFolder}/src/sql/templates/*"
       ],
       "icon": {
         "color": "terminal.ansiYellow",
@@ -16,7 +17,7 @@
       "presentation": {
         "echo": true,
         "reveal": "always",
-        "focus": true,
+        "focus": false,
         "panel": "dedicated",
         "showReuseMessage": false,
         "clear": false,
