@@ -8,8 +8,8 @@ class PostgresConnect:
     port = 5432
     db_name = "experiments"
 
-    def __init__(self) -> None:
-        self.connection = self.connect()
+    # def __init__(self) -> None:
+    # self.connection = self.connect()
 
     def connect(self):
         return psycopg2.connect(
@@ -21,8 +21,12 @@ class PostgresConnect:
         )
 
     def query(self, query_string: str, values: tuple[str]):
-        if not self.connection:
-            self.connection = self.connect()
-        with self.connection.cursor() as cursor:
+        # if not self.connection:
+        #     self.connection = self.connect()
+        connection = self.connect()
+        response = []
+        with connection.cursor() as cursor:
             cursor.execute(query_string, values)
-            return cursor.fetchall()
+            response = cursor.fetchall()
+        connection.close()
+        return response

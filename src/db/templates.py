@@ -1,7 +1,7 @@
 from db.connection import PostgresConnect
 from os import environ
 
-repo_path = "/".join([str(environ.get("PYTHONPATH")), ".."])
+repo_path = "/".join([str(environ.get("PYTHONPATH", "-").split(":")[1]), ".."])
 TEMPLATES_RELPATH = f"{repo_path}/src/sql/templates"
 
 

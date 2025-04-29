@@ -26,7 +26,7 @@ function main {
     -v ON_ERROR_STOP=1 \
     --username "$POSTGRES_USER" \
     --dbname "$POSTGRES_DB" \
-    - "\i /migrations/init.sql"
+    -c "\i /assets/migrations/init.sql"
 }
 
 main

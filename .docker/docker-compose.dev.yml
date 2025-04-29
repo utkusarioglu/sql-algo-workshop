@@ -3,7 +3,8 @@ version: "3.9"
 services:
   sql-algo-workshop:
     container_name: sql-algo-workshop
-    image: utkusarioglu/conda-econ-devcontainer:1.0.15
+    # image: utkusarioglu/conda-econ-devcontainer:1.0.15
+    image: utkusarioglu/conda-econ-devcontainer:3.13-ubuntu-test-24
     environment:
       PYTHONPATH: /utkusarioglu-com/workshops/sql-algo-workshop/src
     volumes:
@@ -18,8 +19,8 @@ services:
       POSTGRES_PASSWORD: root
     volumes:
       - type: bind
-        source: ../src/sql/migrations
-        target: /migrations
+        source: ../assets
+        target: /assets
       - type: bind
         source: ../src/sql/init-scripts
         target: /docker-entrypoint-initdb.d
